@@ -24,8 +24,8 @@ const app = express();
 app.use(
   cors({
     origin: ["https://ddukbab.netlify.app", "https://ddukbab-160bd6fc13f3.herokuapp.com"],
-    // methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    // allowedHeaders: "Content-Type,Authorization,Accept",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type,Authorization,Accept",
     credentials: true,
     optionsSuccessStatus: 200,
   })
