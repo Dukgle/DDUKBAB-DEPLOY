@@ -36,7 +36,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        "/api/users/signup",
+        "/api/signup",
         {
           username: name,
           uni_num: number,
@@ -63,7 +63,7 @@ function SignUp() {
     <div className="signUp-page">
       <Header logoText={logoText} />
       <div className="contents">
-        <form action="" className="form" method="post">
+        <form className="form" method="post">
           <input type="hidden" name="_method" value="post"></input>
           <div className="form-box">
             <div className="form-box-input">

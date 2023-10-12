@@ -23,7 +23,7 @@ function Login() {
   const Login = async (e) => {
     try {
       const response = await axios.post(
-        "/api/users/login",
+        "/api/login",
         {
           uni_num: number,
           password: password,
@@ -57,7 +57,7 @@ function Login() {
       <Header logoText={logoText} />
       <div className="things">
         <img src={Logo} alt="Logo" />
-        <form action="" className="form2" method="post">
+        <form className="form2" method="post">
           <input type="hidden" name="_method" value="post"></input>
           <div className="form-box-input-lg">
             <input type="text" name="" id="number" className="input-field-lg" placeholder="학번/사번/가게명" value={number} onChange={(e) => setNumber(e.target.value)} required />
