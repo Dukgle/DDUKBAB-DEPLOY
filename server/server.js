@@ -39,8 +39,10 @@ app.use(cookieParser());
 // API 라우트 추가
 // app.use("/api", users);
 app.use("/api/users", users);
-app.use("/api/users", user_change);
-app.use("/api/users", my_page);
+// app.use("/api/users", user_change);
+app.use("/api/users/user_change", user_change);
+// app.use("/api/users", my_page);
+app.use("/api/users/my_page", my_page);
 app.use("/api/users/reservation", seat_reserve);
 app.use("/api/users/posts", posts);
 app.use("/api/users/bookmarks", bookmark);
@@ -48,9 +50,12 @@ app.use("/api/users/shopping", shopping);
 app.use("/api/users/order", order); // 많은 수량으로 인해 자동적으로 품절 처리 ? 가능하면 구현
 app.use("/api/user", point_charge);
 
-app.use("/api/salers", saler_menu);
-app.use("/api/salers", saler_page);
-app.use("/api/salers", saler_change);
+// app.use("/api/salers", saler_menu);
+// app.use("/api/salers", saler_page);
+// app.use("/api/salers", saler_change);
+app.use("/api/salers/menu", saler_menu);
+app.use("/api/salers/page", saler_page);
+app.use("/api/salers/change", saler_change);
 
 // 정적 파일 서빙
 app.use(express.static(path.join(__dirname, "public")));
