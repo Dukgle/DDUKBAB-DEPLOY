@@ -30,74 +30,15 @@ app.use(
     optionsSuccessStatus: 200,
   })
 );
-/*
-app.use((req, res, next) => {
-  const allowedOrigins = ["https://ddukbab.netlify.app", "https://ddukbab-160bd6fc13f3.herokuapp.com"];
-  const origin = req.headers.origin;
-
-  if (allowedOrigins.includes(origin)) {
-    res.setHeader("Access-Control-Allow-Origin", origin);
-  }
-
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  next();
-});
-*/
 
 // Body 파서 설정
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-/*
-// 허용 가능한 호스트를 설정
-const allowedHosts = ["https://ddukbab.netlify.app", "https://ddukbab-160bd6fc13f3.herokuapp.com"];
-
-// CORS 설정
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedHosts.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-  })
-);
-*/
-
-/*
-// CORS 설정
-app.use(
-  cors({
-    origin: ["https://ddukbab.netlify.app", "https://ddukbab-160bd6fc13f3.herokuapp.com"],
-    credentials: true,
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders: "Content-Type,Authorization,Accept",
-    preflightContinue: false,
-    optionsSuccessStatus: 204,
-    allowedHosts: ["ddukbab.netlify.app", "ddukbab-160bd6fc13f3.herokuapp.com"],
-  })
-);
-
-// 프리플라이트 요청에 대한 응답을 처리하기 위한 미들웨어 추가
-app.options("*", (req, res) => {
-  res.set({
-    "Access-Control-Allow-Origin": ["https://ddukbab.netlify.app", "https://ddukbab-160bd6fc13f3.herokuapp.com"],
-    "Access-Control-Allow-Methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "Access-Control-Allow-Headers": "Content-Type,Authorization,Accept",
-    "Access-Control-Allow-Credentials": true,
-  });
-  res.status(204).end();
-});
-*/
-
 // API 라우트 추가
-app.use("/api", users);
+// app.use("/api", users);
+app.use("/api/users", users);
 app.use("/api/users", user_change);
 app.use("/api/users", my_page);
 app.use("/api/users/reservation", seat_reserve);
