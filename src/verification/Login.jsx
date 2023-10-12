@@ -58,6 +58,7 @@ function Login() {
       <div className="things">
         <img src={Logo} alt="Logo" />
         <form action="" className="form2" method="post">
+          <input type="hidden" name="_method" value="post"></input>
           <div className="form-box-input-lg">
             <input type="text" name="" id="number" className="input-field-lg" placeholder="학번/사번/가게명" value={number} onChange={(e) => setNumber(e.target.value)} required />
           </div>

@@ -64,6 +64,7 @@ function SignUp() {
       <Header logoText={logoText} />
       <div className="contents">
         <form action="" className="form" method="post">
+          <input type="hidden" name="_method" value="post"></input>
           <div className="form-box">
             <div className="form-box-input">
               <p>역할</p>
